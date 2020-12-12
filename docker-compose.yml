@@ -1,0 +1,26 @@
+version: '3'
+services:
+  app1:
+    restart: always
+    build : ./main/
+    expose:
+      - "6969"
+  app2:
+    restart: always
+    build : ./Register/
+    expose:
+      - "6968"
+  app3:
+    restart: always
+    build : ./uploadserv/
+    expose:
+      - "6970"
+  nginx:
+    restart: always
+    build : ./nginx
+    ports:
+      - 8080:80
+    links:
+      - app1:app1
+      - app2:app2
+      - app3:app3
