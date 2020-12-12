@@ -2,22 +2,22 @@ version: '3'
 services:
   app1:
     restart: always
-    build : ./main/
+    image: freakston/upload-app:app1
     expose:
       - "6969"
   app2:
     restart: always
-    build : ./Register/
+    image: freakston/register-app:app2
     expose:
       - "6968"
   app3:
     restart: always
-    build : ./uploadserv/
+    image: freakston/upload-app:app3
     expose:
       - "6970"
   nginx:
     restart: always
-    build : ./nginx
+    image: freakston/nginx-app:nginx
     ports:
       - 8080:80
     links:
