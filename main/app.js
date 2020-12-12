@@ -18,7 +18,4 @@ app.use(bodyParser.json());
 app.use('/login',loginRout);
 app.use(express.static('views'));
 
-console.log("Fuck this works");
-
-
 module.exports = app;
